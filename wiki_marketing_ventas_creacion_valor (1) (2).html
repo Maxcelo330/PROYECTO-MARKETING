@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wiki · Marketing, Ventas y Creación de Valor</title>
+<meta name="description" content="Wiki académica editable sobre marketing, ventas, buyer persona y creación de valor.">
+<style>
+:root{
+  --green:#bfe8d5; --green2:#6ec9a4; --blue:#bcdcf4; --blue2:#69aee0;
+  --pink:#f7c6d9; --pink2:#e98bb0; --lilac:#d9c9f5; --lilac2:#9c82d6;
+  --ink:#263247; --muted:#68758a; --bg:#f8fafc; --card:#ffffff; --line:#e5eaf1;
+  --shadow:0 12px 35px rgba(52,70,95,.10); --radius:20px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:#3f6fa8;text-decoration:none} a:hover{text-decoration:underline}
+header{background:linear-gradient(135deg,#dff5ea,#e5f2fc 45%,#f5e8f5);padding:34px 20px 24px;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(38,50,71,.08);backdrop-filter:blur(12px)}
+.top{max-width:1180px;margin:auto;display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}.logo{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--green2),var(--blue2),var(--lilac2));display:grid;place-items:center;color:white;font-weight:900;font-size:22px;box-shadow:var(--shadow)}
+.brand h1{font-size:1.12rem;margin:0}.brand small{color:var(--muted)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #d7dee8;background:white;padding:9px 13px;border-radius:12px;cursor:pointer;font-weight:700;color:var(--ink)}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px rgba(0,0,0,.06)}
+nav{max-width:1180px;margin:18px auto 0;display:flex;gap:8px;overflow:auto;padding-bottom:2px}nav a{white-space:nowrap;background:#fff8;border:1px solid #fff;padding:8px 12px;border-radius:999px;font-size:.9rem}
+main{max-width:1180px;margin:0 auto;padding:30px 18px 70px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:35px 0}
+.hero h2{font-size:clamp(2.1rem,5vw,4.1rem);line-height:1.02;margin:0 0 18px;letter-spacing:-2px}
+.hero p{font-size:1.08rem;color:var(--muted);max-width:700px}.tag{display:inline-block;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:800;font-size:.82rem}
+.hero-art{background:linear-gradient(145deg,#eefaf5,#eef6fd 55%,#f9eff8);border-radius:30px;padding:16px;box-shadow:var(--shadow)}
+section{scroll-margin-top:150px;margin:30px 0 54px}
+.section-title{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:18px}
+h2{font-size:2rem;margin:.1rem 0}.lead{color:var(--muted);max-width:850px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.card h3{margin-top:0}
+.pastel-g{background:linear-gradient(145deg,#fff,#effaf4)}.pastel-b{background:linear-gradient(145deg,#fff,#eff7fd)}.pastel-p{background:linear-gradient(145deg,#fff,#fff1f6)}.pastel-l{background:linear-gradient(145deg,#fff,#f6f1fd)}
+.kpi{font-size:2rem;font-weight:900}.muted{color:var(--muted)}
+details{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px 16px;margin:9px 0}summary{cursor:pointer;font-weight:800}
+table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}th,td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#eef5fb}tr:last-child td{border-bottom:0}
+.callout{border-left:6px solid var(--blue2);padding:16px 18px;background:#eff7fd;border-radius:0 14px 14px 0;margin:15px 0}.quote{font-style:italic}
+.editable{outline:2px dashed transparent;outline-offset:5px}.editable.editing{outline-color:var(--lilac2);background:#fffdfd}.edit-tools{display:none;gap:8px;margin-top:10px}.editing .edit-tools{display:flex}
+input,textarea{width:100%;padding:11px 12px;border:1px solid #d9e0e9;border-radius:12px;font:inherit;background:#fff}textarea{min-height:110px}
+footer{background:#edf2f7;padding:28px 18px;color:var(--muted)}footer .inner{max-width:1180px;margin:auto}
+.small{font-size:.88rem}.pill{display:inline-block;padding:5px 9px;border-radius:999px;font-size:.78rem;font-weight:800;margin:2px;background:#f3f6fa}
+svg{max-width:100%;height:auto}.chart-wrap{overflow:auto}
+.ref{padding:12px 0;border-bottom:1px solid var(--line)}.ref:last-child{border-bottom:0}
+.notice{padding:12px 14px;background:#fff8dd;border:1px solid #f1df9b;border-radius:12px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid,.grid2{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.actions{width:100%}.actions .btn{flex:1}}
+@media print{header{position:static}.actions,nav{display:none}.card,table{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand"><div class="logo">M</div><div><h1>Wiki · Marketing, Ventas y Creación de Valor</h1><small>Guía académica editable · acceso libre · adaptable a móviles</small></div></div>
+    <div class="actions">
+      <button class="btn" onclick="toggleEdit()">✏️ Editar wiki</button>
+      <button class="btn" onclick="addNote()">＋ Nueva publicación</button>
+      <button class="btn" onclick="exportWiki()">⬇️ Exportar</button>
+      <button class="btn" onclick="resetWiki()">↺ Restablecer</button>
+    </div>
+  </div>
+  <nav>
+    <a href="#inicio">Inicio</a><a href="#fundamentos">Fundamentos</a><a href="#ventas">Ventas</a><a href="#buyer">Buyer Persona</a><a href="#valor">Creación de valor</a><a href="#vpc">Propuesta de valor</a><a href="#herramientas">Herramientas</a><a href="#lecturas">Lecturas</a>
+  </nav>
+</header>
+
+<main id="wiki">
+<section id="inicio" class="hero">
+  <div>
+    <span class="tag">PROYECTO ACADÉMICO · MARKETING + VENTAS</span>
+    <h2>Marketing, ventas y creación de valor</h2>
+    <p class="editable" data-key="intro">Una wiki educativa para comprender cómo las organizaciones identifican necesidades, diseñan propuestas de valor, gestionan relaciones comerciales y convierten conocimiento del cliente en decisiones de marketing y ventas.</p>
+    <div class="edit-tools" style="display: none;"><button class="btn" onclick="saveAll()">Guardar cambios</button></div>
+    <span class="pill">Kotler &amp; Keller</span><span class="pill">Levitt</span><span class="pill">Berry</span><span class="pill">Fader</span><span class="pill">Osterwalder</span>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 620 410" role="img" aria-label="Ilustración de marketing, ventas y valor">
+      <rect x="25" y="25" width="570" height="360" rx="28" fill="#fff"></rect>
+      <circle cx="155" cy="150" r="72" fill="#bfe8d5"></circle><circle cx="310" cy="125" r="72" fill="#bcdcf4"></circle><circle cx="465" cy="160" r="72" fill="#f7c6d9"></circle>
+      <path d="M150 245 C220 190 245 190 305 230 C360 270 410 245 470 225" fill="none" stroke="#9c82d6" stroke-width="10" stroke-linecap="round"></path>
+      <circle cx="155" cy="150" r="27" fill="#fff"></circle><path d="M140 151h30M155 136v30" stroke="#4e8f73" stroke-width="8" stroke-linecap="round"></path>
+      <circle cx="310" cy="125" r="27" fill="#fff"></circle><path d="M293 128l12 12 23-28" fill="none" stroke="#4d83ad" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="465" cy="160" r="27" fill="#fff"></circle><path d="M450 160h30M465 145v30" stroke="#c55f8b" stroke-width="8" stroke-linecap="round"></path>
+      <rect x="110" y="285" width="400" height="54" rx="27" fill="#eef2f7"></rect>
+      <text x="310" y="320" text-anchor="middle" font-size="22" font-weight="800" fill="#263247">NECESIDAD → VALOR → RELACIÓN</text>
+    </svg>
+  </div>
+</section>
+
+<section id="fundamentos">
+<div class="section-title"><div><h2>1. Evolución de los enfoques del marketing</h2><p class="lead">La orientación comercial puede analizarse como un desplazamiento desde la eficiencia de producción hacia la comprensión del mercado, la relación con clientes y la consideración de múltiples grupos de interés.</p></div></div>
+<div class="chart-wrap">
+<svg viewBox="0 0 1100 250" role="img" aria-label="Línea de evolución de los enfoques de marketing">
+<line x1="80" y1="125" x2="1020" y2="125" stroke="#9aa8b8" stroke-width="6"></line>
+<g font-size="15" text-anchor="middle" fill="#263247">
+<circle cx="110" cy="125" r="22" fill="#bfe8d5"></circle><text x="110" y="80" font-weight="800">Producción</text><text x="110" y="170">disponibilidad + costo</text>
+<circle cx="350" cy="125" r="22" fill="#bcdcf4"></circle><text x="350" y="80" font-weight="800">Producto</text><text x="350" y="170">calidad + innovación</text>
+<circle cx="590" cy="125" r="22" fill="#f7c6d9"></circle><text x="590" y="80" font-weight="800">Ventas</text><text x="590" y="170">persuasión + cierre</text>
+<circle cx="830" cy="125" r="22" fill="#d9c9f5"></circle><text x="830" y="80" font-weight="800">Marketing</text><text x="830" y="170">necesidades + mercado</text>
+<circle cx="1000" cy="125" r="22" fill="#6ec9a4"></circle><text x="1000" y="80" font-weight="800">Holístico</text><text x="1000" y="170">relación + integración + sociedad</text>
+</g>
+</svg></div>
+<div class="grid">
+<article class="card pastel-g"><h3>Enfoque de producción</h3><p>Parte de la premisa de que el mercado valora productos disponibles y accesibles. Su fortaleza está en la eficiencia; su límite aparece cuando las necesidades del cliente requieren diferenciación.</p></article>
+<article class="card pastel-b"><h3>Enfoque de producto</h3><p>Prioriza calidad, desempeño o innovación. Levitt advirtió que una organización puede perder de vista la necesidad que realmente resuelve si se concentra demasiado en el producto.</p><p class="small">Fuente: <a href="https://hbr.org/2004/07/marketing-myopia" target="_blank">Harvard Business Review · Marketing Myopia</a>.</p></article>
+<article class="card pastel-p"><h3>Enfoque de ventas</h3><p>Busca estimular activamente la compra mediante promoción y esfuerzo comercial. Puede ser útil cuando el cliente no busca espontáneamente la categoría, pero requiere prácticas responsables y transparencia.</p></article>
+<article class="card pastel-l"><h3>Marketing moderno</h3><p>Integra investigación, segmentación, posicionamiento y mezcla de marketing para crear y comunicar valor a mercados objetivo. La edición actual de <em>Marketing Management</em> mantiene este enfoque gerencial y estratégico.</p><p class="small">Fuente: <a href="https://www.pearson.com/en-us/subject-catalog/p/marketing-management/P200000010451/9780138184889" target="_blank">Pearson · Marketing Management, 17.ª ed.</a></p></article>
+<article class="card pastel-g"><h3>Marketing holístico</h3><p>Permite observar el sistema completo: marketing integrado, relacional, interno y orientación social. La literatura posterior a Levitt también ha ampliado la mirada hacia múltiples stakeholders.</p><p class="small">Fuente: <a href="https://journals.sagepub.com/doi/abs/10.1509/jppm.29.1.4" target="_blank">Smith, Drumwright &amp; Gentile (2010)</a>.</p></article>
+</div>
+<details><summary>Concepto clave: miopía de marketing</summary><p>Levitt planteó que el crecimiento sostenible depende de cómo una organización define su negocio y de qué tan cuidadosamente interpreta las necesidades del cliente. La idea ayuda a diferenciar “vender un producto” de “resolver una necesidad”.</p></details>
+</section>
+
+<section id="ventas">
+<div class="section-title"><div><h2>2. Administración de ventas y conexión comercial</h2><p class="lead">La administración de ventas coordina personas, procesos, canales, información y métricas para convertir oportunidades en relaciones comerciales sostenibles.</p></div></div>
+<table>
+<thead><tr><th>Dimensión</th><th>Orientación transaccional</th><th>Orientación relacional</th></tr></thead>
+<tbody>
+<tr><td><strong>Horizonte</strong></td><td>Corto plazo y cierre inmediato.</td><td>Largo plazo y continuidad de la relación.</td></tr>
+<tr><td><strong>Objetivo</strong></td><td>Maximizar transacciones.</td><td>Crear valor y retener clientes adecuados.</td></tr>
+<tr><td><strong>Herramientas</strong></td><td>Promoción, prospección, negociación y cierre.</td><td>CRM, servicio, personalización, seguimiento y análisis.</td></tr>
+<tr><td><strong>Métrica complementaria</strong></td><td>Ventas, margen, conversión.</td><td>Retención, satisfacción, recompra y CLV.</td></tr>
+</tbody></table>
+<div class="grid2" style="margin-top:18px">
+<div class="card pastel-b"><h3>Embudo comercial</h3>
+<svg viewBox="0 0 560 430" role="img" aria-label="Embudo de marketing y ventas">
+<path d="M70 45 H490 L420 135 H140 Z" fill="#bcdcf4"></path><path d="M140 145 H420 L370 225 H190 Z" fill="#d9c9f5"></path><path d="M190 235 H370 L335 305 H225 Z" fill="#f7c6d9"></path><path d="M225 315 H335 L305 385 H255 Z" fill="#bfe8d5"></path>
+<g font-size="19" font-weight="800" text-anchor="middle" fill="#263247"><text x="280" y="100">ATENCIÓN</text><text x="280" y="192">INTERÉS</text><text x="280" y="278">DECISIÓN</text><text x="280" y="360">ACCIÓN</text></g>
+</svg>
+<p class="small">El embudo es un modelo de representación del recorrido comercial; sus etapas pueden variar según el negocio y el proceso de compra.</p></div>
+<div class="card pastel-g"><h3>CRM y CLV</h3><p><strong>CRM</strong> organiza información de clientes, oportunidades, interacciones y seguimiento. El <strong>Customer Lifetime Value (CLV)</strong> intenta estimar el valor económico esperado de la relación con un cliente, teniendo en cuenta el contexto del negocio.</p><p>Peter Fader desarrolla investigación y aplicaciones de gestión relacionadas con customer centricity, comportamiento y valor de vida del cliente.</p><p class="small">Fuente: <a href="https://marketing.wharton.upenn.edu/profile/faderp/" target="_blank">Wharton · Peter Fader</a>.</p></div>
+</div>
+</section>
+
+<section id="buyer">
+<div class="section-title"><div><h2>3. Buyer Persona y segmentación profunda</h2><p class="lead">Un buyer persona es una representación basada en datos de un tipo de comprador, útil para comprender necesidades, comportamientos, motivaciones y objeciones. No sustituye la investigación de mercado.</p></div></div>
+<div class="grid2">
+<div class="card pastel-p">
+<h3>Ficha editable de Buyer Persona</h3>
+<label>Nombre arquetípico</label><input data-field="bp-name" value="Andrea, emprendedora universitaria" disabled="">
+<label>Necesidad principal</label><input data-field="bp-need" value="Vender más sin desperdiciar presupuesto" disabled="">
+<label>Canales</label><input data-field="bp-channels" value="Instagram · TikTok · WhatsApp · Google" disabled="">
+<label>Puntos de dolor</label><textarea data-field="bp-pains" disabled="">Poca visibilidad, tiempo limitado, dificultad para medir resultados.</textarea>
+<label>Objeciones</label><textarea data-field="bp-objections" disabled="">Precio, confianza, falta de evidencia y miedo a equivocarse.</textarea>
+</div>
+<div class="card pastel-b">
+<h3>Dimensiones de investigación</h3>
+<div class="chart-wrap">
+<svg viewBox="0 0 520 360" role="img" aria-label="Diagrama de dimensiones del buyer persona">
+<circle cx="260" cy="180" r="72" fill="#fff" stroke="#9c82d6" stroke-width="7"></circle><text x="260" y="187" text-anchor="middle" font-weight="900" font-size="20">BUYER</text>
+<g font-size="15" font-weight="800" text-anchor="middle"><circle cx="260" cy="48" r="48" fill="#bfe8d5"></circle><text x="260" y="45">Datos</text><text x="260" y="64">sociodemográficos</text>
+<circle cx="465" cy="180" r="48" fill="#bcdcf4"></circle><text x="465" y="177">Conducta</text><text x="465" y="196">digital</text>
+<circle cx="260" cy="312" r="48" fill="#f7c6d9"></circle><text x="260" y="309">Motivaciones</text><text x="260" y="328">y metas</text>
+<circle cx="55" cy="180" r="48" fill="#d9c9f5"></circle><text x="55" y="177">Dolores</text><text x="55" y="196">y objeciones</text></g>
+</svg></div>
+</div>
+</div>
+<div class="callout"><strong>Nota metodológica:</strong> la investigación reciente sobre buyer personas señala que son representaciones ficticias basadas en datos reales y que pueden ir más allá de la segmentación demográfica al incorporar comportamiento y motivaciones; también se señalan críticas sobre su sustento empírico, por lo que conviene validarlas con evidencia.</div>
+<p class="small">Lectura académica: <a href="https://journal.uni-mate.hu/index.php/acr/en/article/view/4574" target="_blank">Vida et al. · Defining the Buyer Persona...</a>. También: <a href="https://doi.org/10.1016/j.indmarman.2022.06.006" target="_blank">Industrial Marketing Management (2022)</a>.</p>
+</section>
+
+<section id="valor">
+<div class="section-title"><div><h2>4. Arquitectura del valor</h2><p class="lead">El valor no depende solamente de las características del producto. Para el cliente, la evaluación combina beneficios percibidos, costos, riesgos, esfuerzo, experiencia y alternativas disponibles.</p></div></div>
+<div class="grid">
+<div class="card pastel-g"><h3>Valor percibido</h3><p>Una forma pedagógica de expresarlo es:</p><div class="kpi">Valor ≈ Beneficios − Costos</div><p class="small">Los beneficios pueden ser funcionales, emocionales o sociales; los costos pueden incluir dinero, tiempo, esfuerzo y riesgo.</p></div>
+<div class="card pastel-b"><h3>Valor agregado</h3><p>Son elementos adicionales que incrementan la utilidad o reducen fricciones: asesoría, personalización, soporte, garantía, entrega, integración o información útil.</p></div>
+<div class="card pastel-p"><h3>Ventaja competitiva</h3><p>La propuesta debe diferenciarse en dimensiones que el segmento realmente valore y que la organización pueda sostener.</p></div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>Gráfico explicativo: qué puede aumentar el valor percibido</h3>
+<svg viewBox="0 0 900 330" role="img" aria-label="Gráfico de beneficios y costos del valor percibido">
+<line x1="100" y1="270" x2="820" y2="270" stroke="#9aa8b8" stroke-width="3"></line>
+<g font-size="14" text-anchor="middle" font-weight="800"><text x="210" y="300">Beneficio funcional</text><text x="380" y="300">Experiencia</text><text x="550" y="300">Confianza</text><text x="720" y="300">Ahorro de tiempo</text></g>
+<rect x="155" y="115" width="110" height="155" rx="14" fill="#bfe8d5"></rect><rect x="325" y="80" width="110" height="190" rx="14" fill="#bcdcf4"></rect><rect x="495" y="100" width="110" height="170" rx="14" fill="#f7c6d9"></rect><rect x="665" y="55" width="110" height="215" rx="14" fill="#d9c9f5"></rect>
+<g text-anchor="middle" font-weight="900" fill="#263247"><text x="210" y="105">+</text><text x="380" y="70">+</text><text x="550" y="90">+</text><text x="720" y="45">+</text></g>
+</svg>
+</div>
+</section>
+
+<section id="vpc">
+<div class="section-title"><div><h2>5. Propuesta de valor: dolores, ganancias y ajuste</h2><p class="lead">El Value Proposition Canvas de Strategyzer organiza el perfil del cliente y el mapa de valor para analizar el ajuste entre lo que el cliente intenta lograr y lo que la organización ofrece.</p></div></div>
+<div class="grid2">
+<div class="card pastel-l"><h3>Perfil del cliente</h3><ul><li><strong>Jobs:</strong> tareas, problemas o resultados que intenta conseguir.</li><li><strong>Pains:</strong> costos, riesgos, frustraciones y obstáculos.</li><li><strong>Gains:</strong> beneficios y resultados deseados.</li></ul></div>
+<div class="card pastel-g"><h3>Mapa de valor</h3><ul><li><strong>Productos/servicios:</strong> lo que se ofrece.</li><li><strong>Pain relievers:</strong> cómo se reducen dolores concretos.</li><li><strong>Gain creators:</strong> cómo se generan beneficios deseados.</li></ul></div>
+</div>
+<div class="card" style="margin-top:18px">
+<svg viewBox="0 0 1000 380" role="img" aria-label="Canvas de propuesta de valor simplificado">
+<rect x="40" y="45" width="420" height="290" rx="26" fill="#fff1f6" stroke="#e98bb0" stroke-width="3"></rect>
+<rect x="540" y="45" width="420" height="290" rx="26" fill="#eff7fd" stroke="#69aee0" stroke-width="3"></rect>
+<text x="250" y="82" text-anchor="middle" font-size="21" font-weight="900">PERFIL DEL CLIENTE</text>
+<text x="750" y="82" text-anchor="middle" font-size="21" font-weight="900">MAPA DE VALOR</text>
+<g font-size="17"><text x="75" y="130">🎯 Jobs / tareas</text><text x="75" y="190">⚠️ Pains / dolores</text><text x="75" y="250">✨ Gains / ganancias</text><text x="575" y="130">📦 Productos y servicios</text><text x="575" y="190">🩹 Pain relievers</text><text x="575" y="250">🎁 Gain creators</text></g>
+<path d="M460 190 H540" stroke="#9c82d6" stroke-width="8" stroke-linecap="round"></path><text x="500" y="172" text-anchor="middle" font-size="14" font-weight="800">FIT</text>
+</svg>
+<p>Strategyzer recomienda comprobar el “fit” con evidencia de clientes y no asumir que una coincidencia escrita en el canvas equivale automáticamente a product-market fit.</p>
+<p class="small">Fuente oficial: <a href="https://www.strategyzer.com/library/the-value-proposition-canvas" target="_blank">Strategyzer · Value Proposition Canvas</a>.</p>
+</div>
+</section>
+
+<section id="herramientas">
+<div class="section-title"><div><h2>6. Herramientas para estudiantes y emprendedores</h2><p class="lead">Una caja de herramientas práctica para transformar los conceptos en acciones medibles.</p></div></div>
+<div class="grid">
+<div class="card pastel-b"><h3>🔎 Investigación</h3><p>Encuestas, entrevistas, observación, análisis de reseñas, escucha social y revisión de competidores.</p></div>
+<div class="card pastel-g"><h3>🧩 Segmentación</h3><p>Variables geográficas, demográficas, psicográficas y conductuales; después, construir perfiles y validar con datos.</p></div>
+<div class="card pastel-p"><h3>📣 Marketing de contenidos</h3><p>Contenido educativo, demostrativo y útil alineado con las preguntas del cliente en cada etapa del recorrido.</p></div>
+<div class="card pastel-l"><h3>🤝 CRM</h3><p>Registrar contactos, oportunidades, actividades, seguimiento, servicio y métricas de conversión.</p></div>
+<div class="card pastel-g"><h3>📊 Analítica</h3><p>Conversión, CAC, ticket promedio, margen, retención, recompra y CLV, según la disponibilidad de datos.</p></div>
+<div class="card pastel-b"><h3>🧪 Experimentación</h3><p>Probar mensajes, ofertas, páginas, canales o procesos; medir resultados y conservar evidencia de lo aprendido.</p></div>
+</div>
+<div class="notice" style="margin-top:18px"><strong>Modo wiki:</strong> activa “Editar wiki” para modificar el contenido, completar la ficha de buyer persona o añadir publicaciones. Los cambios se guardan en el navegador mediante almacenamiento local. Usa “Exportar” para descargar una copia HTML editable.</div>
+</section>
+
+<section id="lecturas">
+<div class="section-title"><div><h2>7. Lecturas y fuentes recomendadas</h2><p class="lead">Fuentes académicas, editoriales y profesionales para ampliar la wiki y respaldar trabajos universitarios.</p></div></div>
+<div class="card">
+<div class="ref"><strong>Kotler, Keller &amp; Chernev.</strong> <em>Marketing Management</em>, 17.ª edición. Pearson, publicada en 2024. <a href="https://www.pearson.com/en-us/subject-catalog/p/marketing-management/P200000010451/9780138184889" target="_blank">Ficha editorial</a>.</div>
+<div class="ref"><strong>Levitt, T.</strong> “Marketing Myopia”. <em>Harvard Business Review</em>. La publicación original corresponde a 1960; HBR mantiene una versión clásica/reimpresa. <a href="https://hbr.org/2004/07/marketing-myopia" target="_blank">HBR</a>.</div>
+<div class="ref"><strong>Smith, N. C., Drumwright, M. E., &amp; Gentile, M. C. (2010).</strong> “The New Marketing Myopia”. <em>Journal of Public Policy &amp; Marketing, 29</em>(1), 4–11. DOI 10.1509/jppm.29.1.4. <a href="https://journals.sagepub.com/doi/abs/10.1509/jppm.29.1.4" target="_blank">SAGE</a>.</div>
+<div class="ref"><strong>Berry, L. L.</strong> “Relationship Marketing of Services: Perspectives from 1983 and 2000”. <em>Journal of Relationship Marketing, 1</em>(1), 59–77. <a href="https://www.tandfonline.com/doi/abs/10.1300/J366v01n01_05" target="_blank">Taylor &amp; Francis</a>.</div>
+<div class="ref"><strong>Fader, P. S.</strong> Investigación sobre customer centricity, comportamiento y Customer Lifetime Value. <a href="https://marketing.wharton.upenn.edu/profile/faderp/" target="_blank">Wharton</a>.</div>
+<div class="ref"><strong>Vida, N., Bringye, B., Varga, E., &amp; Máté, B.</strong> Estudio sobre buyer persona, segmentación y comunicación. <em>Acta Carolus Robertus</em>. <a href="https://journal.uni-mate.hu/index.php/acr/en/article/view/4574" target="_blank">Artículo</a>.</div>
+<div class="ref"><strong>Strategyzer.</strong> Value Proposition Canvas: customer profile, value map y validación del ajuste. <a href="https://www.strategyzer.com/library/the-value-proposition-canvas" target="_blank">Recurso oficial</a>.</div>
+</div>
+</section>
+
+<section id="publicaciones">
+<div class="section-title"><div><h2>8. Publicaciones de la comunidad</h2><p class="lead">Espacio abierto para añadir ejemplos, casos, investigaciones, noticias académicas o experiencias de emprendimiento.</p></div></div>
+<div id="notes" class="grid2"><article class="card note pastel-g"><h3 class="nt">Glosario</h3><div class="nb editable"><span id="docs-internal-guid-35355e63-7fff-e66f-f5a2-f9b3658ef117"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Fundamentos de marketing</span></p><ul style="margin-top:0;margin-bottom:0;padding-inline-start:48px;"><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Marketing tradicional:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Promoción de marca por medios masivos (TV, radio, prensa, vía pública), con alcance amplio pero menor medición.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Marketing digital: </span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Promoción a través de canales en línea (SEO, redes, email), con segmentación y medición en tiempo real.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">4P / 7P (Kotler):</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> modelo del marketing mix — Producto, Precio, Plaza, Promoción (y para servicios: Personas, Procesos, Evidencia física).</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Marketing 4.0 / 5.0:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> evolución del marketing hacia lo digital y luego hacia la integración con IA y datos humanos.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Marketing de permiso (Godin):</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Ganar la atención del cliente en vez de interrumpirlo con publicidad.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Posicionamiento (Ries &amp; Trout):</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> El lugar que ocupa una marca en la mente del consumidor frente a la competencia.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Inbound Marketing: </span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Atraer clientes con contenido de valor en lugar de publicidad interruptiva.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Neuromarketing:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Estudio de las respuestas emocionales y cognitivas del consumidor ante estímulos de marketing.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Trade Marketing:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Estrategias enfocadas en optimizar la presencia y venta en el punto de venta físico.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Marketing Experiencial:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Creación de experiencias memorables que conectan emocionalmente al consumidor con la marca.</span></p></li></ul><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Ventas y crecimiento</span></p><ul style="margin-top:0;margin-bottom:0;padding-inline-start:48px;"><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Embudo (funnel) de ventas:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Etapas por las que pasa un cliente — Atracción, Interés, Decisión, Acción, Fidelización.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Fidelización:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Proceso de convertir a un comprador en cliente recurrente y recomendante de la marca.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Cierre por resumen / urgencia / alternativa:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Técnicas para guiar al cliente hacia la decisión final de compra.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">CRM:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Sistema para centralizar contactos, historial y oportunidades de venta.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Lead magnet: </span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Contenido o recurso gratuito ofrecido a cambio de datos de contacto de un cliente potencial.</span></p></li></ul><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Herramientas y recursos</span></p><ul style="margin-top:0;margin-bottom:0;padding-inline-start:48px;"><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Business Model Canvas:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Lienzo visual para estructurar un modelo de negocio (propuesta de valor, canales, ingresos, etc.).</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">SEO:</span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;"> Optimización de contenido para posicionarse mejor en buscadores.</span></p></li><li dir="ltr" style="list-style-type: disc; font-size: 12pt; font-family: Arial, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre;" aria-level="1"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" role="presentation"><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-weight: 700; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">E-commerce: </span><span style="font-size: 12pt; font-family: Roboto, sans-serif; background-color: transparent; font-variant: normal; vertical-align: baseline; white-space: pre-wrap;">Venta de productos o servicios a través de una tienda en línea.</span></p></li></ul></span></div><button class="btn" onclick="deleteNote(0)">Eliminar</button></article></div>
+</section>
+</main>
+
+<footer><div class="inner"><strong>Wiki académica · Marketing, Ventas y Creación de Valor</strong><br><span class="small">Plantilla educativa editable. Para acceso público, publica este archivo en un servicio de hosting estático como GitHub Pages, Netlify o similar. Para edición colaborativa multiusuario se requiere una plataforma con base de datos/autenticación.</span></div></footer>
+
+<script>
+const STORAGE='wikiMarketingVentasV1';
+let editing=false;
+const defaults={
+ intro:'Una wiki educativa para comprender cómo las organizaciones identifican necesidades, diseñan propuestas de valor, gestionan relaciones comerciales y convierten conocimiento del cliente en decisiones de marketing y ventas.'
+};
+function load(){
+ const data=JSON.parse(localStorage.getItem(STORAGE)||'{}');
+ document.querySelectorAll('[data-key]').forEach(el=>{const k=el.dataset.key;if(data[k])el.innerHTML=data[k]});
+ renderNotes(data.notes||[]);
+}
+function toggleEdit(){
+ editing=!editing;
+ document.querySelectorAll('.editable').forEach(el=>{el.contentEditable=editing;el.classList.toggle('editing',editing)});
+ document.querySelectorAll('.edit-tools').forEach(x=>x.style.display=editing?'flex':'none');
+ document.querySelectorAll('input[data-field],textarea[data-field]').forEach(el=>el.disabled=!editing);
+ alert(editing?'Modo edición activado. Puedes escribir directamente en los bloques y luego pulsar Guardar cambios.':'Modo edición desactivado.');
+}
+function saveAll(){
+ const data=JSON.parse(localStorage.getItem(STORAGE)||'{}');
+ document.querySelectorAll('[data-key]').forEach(el=>data[el.dataset.key]=el.innerHTML);
+ data.notes=[...document.querySelectorAll('.note')].map(n=>({title:n.querySelector('.nt').innerText,body:n.querySelector('.nb').innerHTML}));
+ localStorage.setItem(STORAGE,JSON.stringify(data));
+ alert('Cambios guardados en este navegador.');
+}
+function addNote(){
+ const title=prompt('Título de la nueva publicación:','Nueva publicación');
+ if(!title)return;
+ const body=prompt('Contenido breve:','Escribe aquí tu aporte académico o empresarial.');
+ const data=JSON.parse(localStorage.getItem(STORAGE)||'{}');
+ data.notes=data.notes||[];data.notes.push({title,body:body||''});localStorage.setItem(STORAGE,JSON.stringify(data));renderNotes(data.notes);
+}
+function renderNotes(notes){
+ const box=document.getElementById('notes');box.innerHTML='';
+ notes.forEach((n,i)=>{const el=document.createElement('article');el.className='card note pastel-'+['g','b','p','l'][i%4];el.innerHTML=`<h3 class="nt" contenteditable="${editing}">${escapeHtml(n.title)}</h3><div class="nb editable" contenteditable="${editing}">${n.body}</div><button class="btn" onclick="deleteNote(${i})">Eliminar</button>`;box.appendChild(el)})
+}
+function deleteNote(i){const d=JSON.parse(localStorage.getItem(STORAGE)||'{}');d.notes=(d.notes||[]).filter((_,x)=>x!==i);localStorage.setItem(STORAGE,JSON.stringify(d));renderNotes(d.notes)}
+function exportWiki(){
+ saveAll();
+ const clone=document.documentElement.cloneNode(true);
+ clone.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));
+ const blob=new Blob(['<!DOCTYPE html>'+clone.outerHTML],{type:'text/html;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='wiki_marketing_ventas_creacion_valor.html';a.click();URL.revokeObjectURL(a.href);
+}
+function resetWiki(){if(confirm('¿Restablecer el contenido guardado en este navegador?')){localStorage.removeItem(STORAGE);location.reload()}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+window.addEventListener('DOMContentLoaded',()=>{load();document.querySelectorAll('input[data-field],textarea[data-field]').forEach(el=>el.disabled=true)});
+</script>
+
+</body></html>
